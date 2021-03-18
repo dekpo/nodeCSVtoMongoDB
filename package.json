@@ -1,0 +1,16 @@
+{
+  "name": "csvtomongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fast-csv": "^4.3.6",
+    "mongoose": "^5.12.0"
+  }
+}
