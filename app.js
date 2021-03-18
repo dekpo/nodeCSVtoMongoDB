@@ -30,7 +30,7 @@ fs.createReadStream(path.resolve(__dirname, 'csv_files', 'postal_codes_FR.csv'))
     .on('error', error => console.error(error))
     .on('data', row => {
         // mise en place d'un fusible pour stopper le process au moment opportun 
-       //if (i==4) process.exit();
+       //if (i==2) process.exit();
         // on sépare les données de latitude et longitude du fichier français
         // du type coordonnees_gps: '47.3909535657,6.4185381191'
         let coords = row.coordonnees_gps.split(',');
@@ -55,7 +55,7 @@ fs.createReadStream(path.resolve(__dirname, 'csv_files', 'postal_codes_FR.csv'))
            region: dept,
            town: commune,
            lat: coords[0],
-           lng: coords[1]
+           lng: coords[1] ? coords[1] : ''
        }
 
         let postCode = new myModel( newRow );
